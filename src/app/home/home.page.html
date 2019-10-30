@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="myform" (ngSubmit)="addData(myform.value)" class="back" style="background-image: url(C:\project\alligator\src\assets\icon\favicon.png);background-size: 100%;">
+  
+
+  <ion-label position="floating" >enter your mail id </ion-label>
+  <ion-input formControlName="email"></ion-input>
+
+
+  <ion-label>enter for First name  </ion-label>
+  <ion-input formControlName="fname"></ion-input>
+
+  <ion-label>enter for last name </ion-label>
+  <ion-input formControlName="lname"></ion-input>
+
+  <ion-label>enter your mobile number </ion-label>
+  <ion-input formControlName="phno"></ion-input>
+
+  <ion-button type="submit" [disabled]="!myform.valid">submit</ion-button>
+
+
+  
+   
+ 
+
+  {{myform.value | json}}
+  {{signup}}
+
+</form>
+<div>
+  <ion-input type="string" placeholder="enter your mail ID" [(ngModel)]="email"></ion-input>
+  <ion-input type="string" placeholder="update ur name" [(ngModel)]="update"></ion-input>
+  <ion-button (click)="delete()" >delete</ion-button>
+  <ion-button (click)="search()" >search</ion-button>
+  <ion-button (click)="updateCustomer()" >update</ion-button>
+</div>
+</ion-content>
